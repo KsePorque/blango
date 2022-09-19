@@ -82,6 +82,8 @@ class Dev(Configuration):
         'crispy_forms',
         'crispy_bootstrap5',
 
+        #'rest_framework ',
+
         'blog',
     ]
 
