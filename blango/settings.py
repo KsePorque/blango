@@ -73,6 +73,7 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'debug_toolbar',
         'blango_auth',
+        'rest_framework',
 
         'allauth',
         'allauth.account',
