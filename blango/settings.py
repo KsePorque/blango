@@ -74,6 +74,7 @@ class Dev(Configuration):
         'debug_toolbar',
         'blango_auth',
         'rest_framework',
+        'rest_framework.authtoken',
 
         'allauth',
         'allauth.account',
@@ -89,6 +90,14 @@ class Dev(Configuration):
     ]
 
     SITE_ID = 1
+
+    REST_FRAMEWORK = {
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+          "rest_framework.authentication.BasicAuthentication",
+          "rest_framework.authentication.SessionAuthentication",
+          "rest_framework.authentication.TokenAuthentication",
+      ]
+    } 
 
     # As custom user model do not have Username field:
     ACCOUNT_USER_MODEL_USERNAME_FIELD = None
