@@ -75,6 +75,7 @@ class Dev(Configuration):
         'blango_auth',
         'rest_framework',
         'rest_framework.authtoken',
+        'drf_yasg',
 
         'allauth',
         'allauth.account',
@@ -83,8 +84,6 @@ class Dev(Configuration):
 
         'crispy_forms',
         'crispy_bootstrap5',
-
-        #'rest_framework ',
 
         'blog',
     ]
@@ -145,6 +144,13 @@ class Dev(Configuration):
 
     WSGI_APPLICATION = 'blango.wsgi.application'
 
+    # Swagger
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
+    }
 
     # Database
     # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
