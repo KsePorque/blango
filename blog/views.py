@@ -2,6 +2,7 @@ import logging
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import redirect, render, get_object_or_404
+from django.urls import reverse
 
 ## cache
 #from django.views.decorators.cache import cache_page
@@ -59,4 +60,7 @@ def get_ip(request):
 
 
 def post_table(request):
-    return render(request, "blog/post-table.html")
+    return render(
+        request, "blog/post-table.html", 
+        {"post_list_url": reverse("post-list")}
+    )

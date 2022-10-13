@@ -16,6 +16,7 @@
 
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
+    <script>const postListUrl = '{{ post_list_url|escapejs }}'</script>
     <script type="text/babel" src="{% static 'blog/blog.js' %}"></script>
     
 {% endblock %}
